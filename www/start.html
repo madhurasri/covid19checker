@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Security-Policy" content="default-src * gap: ws: https://ssl.gstatic.com;style-src * 'unsafe-inline' 'self' data: blob:;script-src * 'unsafe-inline' 'unsafe-eval' data: blob:;img-src * data: 'unsafe-inline' 'self' content:;">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<title>Coronavirus Self Checker</title>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+</head>
+<body class="white-text blue-grey darken-2">
+	<nav class="red blue-grey darken-4" role="navigation">
+		<div class="nav-wrapper">
+			<a href="#!" class="brand-logo center">Self Checker</a>
+			<ul id="nav-mobile" class="sidenav">
+				<li class="app-title-box gradient-hor bg-pan-right">
+					<h3>Coronavirus</h3>
+					<h5>Self Checker App</h5>
+				</li>
+				<li><a href="start.html"><i class="material-icons">search</i> Check</a></li>
+				<li><a id="stay_safe" class="sidenav-close"><i class="material-icons">verified_user</i> How to stay safe</a></li>
+				<li><a id="emergency" class="sidenav-close"><i class="material-icons">phone</i> Emergency Contacts</a></li>
+				<li><a id="hospitals" class="sidenav-close"><i class="material-icons">add_location</i> Hospitals</a></li>
+				<li><div class="divider"></div></li>
+				<li><a id="about" class="sidenav-close"><i class="material-icons">info_outline</i> About this App</a></li>
+			</ul>
+			<a href="#" data-target="nav-mobile" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+		</div>		
+	</nav>
+
+	<div class="section ">
+		<div id="content-area" class="container">
+
+			<div class="row" id="question_fever">
+				<div class="col s12 center-align">
+					<img src="img/fever.svg" class="q_image">
+					<div class="symptom question">Do you have fever ?</div>
+				</div>
+			</div>
+			<div class="row answers" id="answer_fever">
+				<div class="col s6">
+					<button data-value="end1.html" class="waves-effect waves-light btn-large fluid red darken-1"><i class="material-icons left">cancel</i>No</button>
+				</div>
+				<div class="col s6">
+					<button data-value="symptom_2_cough.html" class="waves-effect waves-light btn-large fluid green darken-1"><i class="material-icons left">check_circle</i>Yes</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/init.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$('button').on('click', function (e) {
+				$("#content-area").empty();
+				$("#content-area").load($(this).data("value"));
+			});
+
+			$("#stay_safe").click({open_url: "stay_safe.html"}, load_page);
+			$("#emergency").click({open_url: "emergency.html"}, load_page);
+			$("#hospitals").click({open_url: "hospitals.html"}, load_page);
+			$("#about").click({open_url: "about.html"}, load_page);
+
+			function load_page(event){
+				$("#content-area").empty();
+				$("#content-area").load(event.data.open_url);
+			}
+
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="col s12 center-align">
+		<div class="question">Have you been to an overseas country or have you spent time with a person with fever who has come from an overseas country within last 14 days?</div>
+	</div>
+</div>
+<div class="row answers">
+	<div class="col s6">
+		<button data-value="end2.html" class="waves-effect waves-light btn-large fluid red darken-2"><i class="material-icons left">cancel</i>No</button>
+	</div>
+	<div class="col s6">
+		<button data-value="end3.html" class="waves-effect waves-light btn-large fluid green darken-2"><i class="material-icons left">check_circle</i>Yes</button>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('button').on('click', function (e) {
+			$("#content-area").empty();
+			$("#content-area").load($(this).data("value"));		
+		});   
+	});
+</script>

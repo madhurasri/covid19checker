@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Security-Policy" content="default-src * gap: ws: https://ssl.gstatic.com;style-src * 'unsafe-inline' 'self' data: blob:;script-src * 'unsafe-inline' 'unsafe-eval' data: blob:;img-src * data: 'unsafe-inline' 'self' content:;">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<title>Coronavirus Self Checker</title>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<style type="text/css">
+		html,body,.valign-wrapper{
+			height: 100%;
+			width: 100%;
+		}
+		body{
+			background: #d7d1e8;
+		}
+	</style>
+</head>
+<body class="white-text">
+
+	<div class="valign-wrapper">
+		<table class="welcome-table">
+			<tr>
+				<td><img src="img/welcome_image.svg" class="welcome_image"></td>
+			</tr>
+			<tr>
+				<td class="center-align"><button onclick="window.location.href = 'start.html';" class="btn waves-effect waves-light welcome-btn" type="submit" name="action">Proceed<i class="material-icons right">send</i></button></td>
+			</tr>
+		</table>
+		
+	</div>
+
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
